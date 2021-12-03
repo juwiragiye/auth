@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const volleyball = require('volleyball');
 const auth = require('./auth');
@@ -7,6 +8,7 @@ const app = express();
 const port = 5000;
 
 app.use(volleyball);
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.json({ message: 'Hello world👋' });
